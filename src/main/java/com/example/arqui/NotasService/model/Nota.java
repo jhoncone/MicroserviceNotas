@@ -18,5 +18,6 @@ public class Nota {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String nombrecurso;
+    private String codalu;
     private double califi;
 }
