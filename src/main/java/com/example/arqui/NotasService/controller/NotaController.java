@@ -14,7 +14,7 @@ import java.util.NoSuchElementException;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/apinotas")
 @CrossOrigin("*")
 public class NotaController {
 
@@ -28,13 +28,13 @@ public class NotaController {
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
-    @GetMapping(value = "/getcursos",produces = "application/json")
+    @GetMapping(value = "/getnotas",produces = "application/json")
     public List<Nota>  listaNotas(){
         List<Nota> listaCursos = notaService.getAll();
         return listaCursos;
     }
 
-    @GetMapping(path = "/curso/{id}")
+    @GetMapping(path = "/nota/{id}")
     public Optional<Nota> getNotaById(@PathVariable("id") Integer id){
         return notaService.obtenerporId(id);
     }
